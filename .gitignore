@@ -1,0 +1,9 @@
+# object files
+objs/
+*.o
+
+# exe files
+*.exe
+
+# test temps
+automake/
