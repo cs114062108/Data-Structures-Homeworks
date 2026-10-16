@@ -7,3 +7,9 @@ objs/
 
 # test temps
 automake/
+hello/
+meow/
+
+# cheat sheets
+*.pdf
+cheat_sheets/*.html
