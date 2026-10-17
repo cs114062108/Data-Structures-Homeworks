@@ -7,7 +7,7 @@ objdir = objs
 root_sources = $(wildcard *.cpp)
 root_targets = $(patsubst %.cpp, %, $(root_sources))
 
-filter_dirs_names = $(objdir) automake
+filter_dirs_names = $(objdir) automake cheat_sheets
 to_filter = $(patsubst %, %/, $(filter_dirs_names))
 
 nest_dirs = $(patsubst %/, %/, $(filter-out $(to_filter), $(wildcard */)))
