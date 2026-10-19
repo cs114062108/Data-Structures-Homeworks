@@ -9,6 +9,7 @@ objs/
 automake/
 hello/
 meow/
+aah.cpp
 
 # cheat sheets
 *.pdf
