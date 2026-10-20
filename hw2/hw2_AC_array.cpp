@@ -17,7 +17,7 @@ int main() {
     for (int i = 0; s[i] != '\0'; ++i) {
         char d = s[i];
         if (top >= 0 && opposite(st[top], d)) {
-            --top;       // Pop the opposite step.
+            --top;          // Pop the opposite step.
         } else {
             st[++top] = d;  // Push the current step.
         }
@@ -25,4 +25,5 @@ int main() {
 
     st[top + 1] = '\0';
     cout << st << '\n';
+    //printf("%s\n", st);
 }

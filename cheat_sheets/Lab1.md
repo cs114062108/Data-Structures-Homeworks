@@ -1,4 +1,4 @@
-# HW1 Cheatsheet
+# Lab1 Cheatsheet
 
 ### `hw1.cpp`
 ```cpp
