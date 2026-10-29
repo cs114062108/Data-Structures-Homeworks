@@ -21,7 +21,7 @@ nest_exes = $(patsubst %.cpp, %.exe, $(nest_sources))
 root_exes = $(patsubst %, %.exe, $(root_targets))
 all_exes = $(nest_exes) $(root_exes)
 
-# -- Defined neSted build rule --
+# -- Defined nested build rule --
 define NEST_BUILD_RULE
 
 1_sources = $$(wildcard $(1)/*.cpp)
