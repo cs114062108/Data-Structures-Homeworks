@@ -58,14 +58,14 @@ $(root_targets): %: $(objdir)/%.o
 # Precious the intermediate object sources
 .PRECIOUS: $(objdir)/%.o
 
-.PHONY: all clean
+.PHONY: all clean list_dirs
 
 all: $(all_targets)
 	@echo Exes: $(all_exes)
 
-list_dirs: $(nest_dirs)
-	@echo Nested Dirs: $^
-	@echo Nested Dirs Names: $(patsubst %/, %, $^)
+list_dirs:
+	@echo Nested Dirs: $(nest_dirs)
+	@echo Nested Dirs Names: $(patsubst %/, %, $(nest_dirs))
 	@echo Nested Object Dirs: $(nest_objdirs)
 	@echo Nested Sources: $(nest_sources)
 	@echo Nested Targets: $(nest_targets)

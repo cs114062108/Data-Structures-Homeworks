@@ -75,7 +75,7 @@ class BST{
             return -1;
         }
 
-        T* kth(T k) {
+        T* kth(int k) {
             Node<T> *node = root;
             while (node != nullptr) {
                 int leftSize = nodeSize(node->left);
