@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include <queue>
+
 using namespace std;
 
 template<class vT>
@@ -93,6 +95,47 @@ class BST{
     
     public:
         explicit BST(): root(nullptr) {}
+        
+        // ----------------------------------------------------
+        // Debug: Level order
+        // ----------------------------------------------------
+        void levelOrder() {
+            Node<int> *node = root;
+            int cnt, next_cnt;
+            int counter = 0;
+            queue<Node<int>*> nodes;
+            nodes.push(node);
+            cnt = 1; next_cnt = 0;
+            while (!nodes.empty()) {
+                node = nodes.front();
+                counter++;
+                nodes.pop();
+                if (node->left != nullptr) {
+                    nodes.push(node->left);
+                    next_cnt++;
+                }
+                if (node->right != nullptr) {
+                    nodes.push(node->right);
+                    next_cnt++;
+                }
+
+                int leftSize = nodeSize(node->left);
+                int rightSize = nodeSize(node->right);
+                if (rightSize == 0) rightSize = 1;
+
+                for (int __ = 0; __ < leftSize; __++) cout << " ";
+                cout << node->val;
+
+                if (counter == cnt) {
+                    cnt = next_cnt;
+                    counter = 0;
+                    next_cnt = 0;
+                    cout << endl;
+                } else {
+                    for (int __ = 0; __ < rightSize; __++) cout << " ";
+                }
+            }
+        }
 
         void insert(int x) {
             root = insertNode(root, x);
@@ -149,6 +192,8 @@ class BST{
         }
 };
 
+#define DEBUG 1
+
 int main() {
     int Q;
     cin >> Q;
@@ -162,6 +207,7 @@ int main() {
         if (cmd == "INSERT") {
             int x; cin >> x;
             tree.insert(x);
+            if (DEBUG) tree.levelOrder();
         } else if (cmd == "RANK") {
             int x; cin >> x;
             cout << tree.rank(x) << endl;
@@ -174,6 +220,7 @@ int main() {
         } else if (cmd == "DELETE") {
             int x; cin >> x;
             tree.del(x);
+            if (DEBUG) tree.levelOrder();
         }
     }
 
