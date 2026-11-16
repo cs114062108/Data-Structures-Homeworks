@@ -7,7 +7,7 @@ using namespace std;
 #define llint long long
 #define INF 1e18    // should be greater than n * w
 
-vector<vector<pair<llint, int>>> Graph;
+vector<vector<pair<int, int>>> Graph;
 
 int main() {
     // input

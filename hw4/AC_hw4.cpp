@@ -5,7 +5,7 @@ using namespace std;
 
 const long long INF = 1e18;
 int n, m, k, S, T;
-vector<vector<pair<int, int>>> Graph;
+vector<vector<pair<long long, int>>> Graph;
 
 int main(){
     // input
